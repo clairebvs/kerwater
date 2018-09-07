@@ -15,7 +15,7 @@
   <body>
     <div>
       <% if current_user %>
-        <a class="control"> <%= link_to 'Sign Out', '/signout', class: "button is-primary is-inverted" %></a>
+        <%= render "shared/connected_navbar" %>
     </div>
       <% else %>
     <%= render "shared/navbar" %>
