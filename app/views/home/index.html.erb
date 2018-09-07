@@ -4,7 +4,10 @@
   <div class="hero-body">
     <div class="container">
         <h2 class="subtitle">
-          Welcome to Kerwater
+          Welcome to Kerwater,
+          <% if current_user %>
+            <%= "#{current_user.username}" %>
+          <% end %>
         </h2>
     </div>
   </div>

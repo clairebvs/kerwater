@@ -13,7 +13,13 @@
   </head>
 
   <body>
+    <div>
+      <% if current_user %>
+        <a class="control"> <%= link_to 'Sign Out', '/signout', class: "button is-primary is-inverted" %></a>
+    </div>
+      <% else %>
     <%= render "shared/navbar" %>
+      <% end %>
     <%= yield %>
   </body>
 </html>

@@ -18,13 +18,10 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="field is-grouped">
-          <p class="control">
-            <a class="bd-tw-button button">
-              <span>
-                Sign Up with Google
-              </span>
-            </a>
-          </p>
+          <span>
+            <a class="control"> <%= button_to 'Sign Up with Google', '/auth/google_oauth2', method: :get, class: "bd-tw-button button" %>
+          </span>
+        </a>
           <p class="control">
             <a class="button is-link">
               <span>Log In</span>
