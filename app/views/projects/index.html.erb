@@ -1,0 +1,14 @@
+<h1> 10 Results </h1>
+
+<%= @presenter.projects.each do |project| %>
+  <ul class="project">
+    <li class="name"><%= project.name %></li>
+    <li class="country"><%= project.country %></li>
+    <li class="region"><%= project.region %></li>
+    <li class="abstract"><%= project.abstract %></li>
+    <li class="approval_date"><%= project.approval_date %></li>
+    <li class="closing_date"><%= project.closing_date %></li>
+    <li class="total_cost"><%= project.total_cost %></li>
+    <li class="team_leader"><%= project.team_leader %></li>
+  </ul>
+<% end %>
