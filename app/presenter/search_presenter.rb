@@ -6,9 +6,14 @@ class SearchPresenter
     end
 
     response = conn.get("/api/v2/projects?format=json&theme_exact=Water+resource+management&source=IBRD&kw=N")
-
-    JSON.parse(response.body, symbolize_names: true)[:projects].map do |project_data|
-      Project.new(project_data)
+    parsed = JSON.parse(response.body, symbolize_names: true)[:projects]
+    parsed.each_pair do |key, value|
+       Project.new(parsed[key])
     end
+    # JSON.parse(response.body, symbolize_names: true)[:projects].each_pair do |key, value|
+    #   require "pry"; binding.pry
+    #    Project.new(value[key])
+    # end
+
   end
 end

@@ -21,9 +21,9 @@ describe 'Project' do
         project = Project.new(data)
 
         expect(project.name).to eq("Modernization of Water Supply and Sanitation Services")
-        expect(project.counrty).to eq("Peru")
+        expect(project.country).to eq("Peru")
         expect(project.region).to eq("Latin America and Caribbean")
-        expect(project.abstract).to includes("to provide efficient water and sanitation services")
+        expect(project.abstract).to include?("to provide efficient water and sanitation services")
         expect(project.approval_date).to eq("2018-07-26T00:00:00Z")
         expect(project.closing_date).to eq("2023-12-31T00:00:00Z")
         expect(project.total_cost).to eq("200,000,000")

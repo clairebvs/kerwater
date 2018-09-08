@@ -14,4 +14,4 @@ describe 'a visitor' do
       expect(page).to have_link('Log Out')
     end
   end
-end 
+end

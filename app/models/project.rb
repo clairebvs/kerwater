@@ -1,7 +1,8 @@
-class Project 
+class Project
   attr_reader :name, :country, :region, :abstract, :approval_date, :closing_date, :total_cost, :team_leader
 
   def initialize(data)
+    # require "pry"; binding.pry
     @name = data[:project_name]
     @country = data[:countryshortname]
     @region = data[:regionname]

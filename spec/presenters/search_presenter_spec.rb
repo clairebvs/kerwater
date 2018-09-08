@@ -12,7 +12,7 @@ describe SearchPresenter do
         search_presenter = SearchPresenter.new
 
         expect(search_presenter.projects.count).to eq(10)
-        expect(search_presenter.projects.first).to be_a(Project)
+        expect(search_presenter.projects[:P157043]).to be_a(Project)
       end
     end
   end
