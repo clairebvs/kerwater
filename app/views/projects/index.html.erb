@@ -1,14 +1,32 @@
 <h1> 10 Results </h1>
 
-<%= @presenter.projects.each do |project| %>
-  <ul class="project">
-    <li class="name"><%= project.name %></li>
-    <li class="country"><%= project.country %></li>
-    <li class="region"><%= project.region %></li>
-    <li class="abstract"><%= project.abstract %></li>
-    <li class="approval_date"><%= project.approval_date %></li>
-    <li class="closing_date"><%= project.closing_date %></li>
-    <li class="total_cost"><%= project.total_cost %></li>
-    <li class="team_leader"><%= project.team_leader %></li>
-  </ul>
-<% end %>
+<table class="table is-bordered is-striped">
+  <thead>
+    <th>Name</th>
+    <th>Country</th>
+    <th>Region</th>
+    <th>Abstract</th>
+    <th>Approval date</th>
+    <th>Closing date</th>
+    <th>Total cost</th>
+    <th>Team Leader</th>
+    <th>Comments</th>
+    <th>Follow</th>
+  </thead>
+
+  <tbody>
+    <% @presenter.projects.each do |project| %>
+      <tr class="project">
+        <td class="name"><%= project.name %></li>
+        <td class="country"><%= project.country %></td>
+        <td class="region"><%= project.region %></td>
+        <td class="abstract"><%= project.abstract %></td>
+        <td class="approval_date"><%= project.approval_date %></td>
+        <td class="closing_date"><%= project.closing_date %></td>
+        <td class="total_cost"><%= project.total_cost %></td>
+        <td class="team_leader"><%= project.team_leader %></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>

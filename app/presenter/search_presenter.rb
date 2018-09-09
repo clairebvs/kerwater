@@ -7,8 +7,8 @@ class SearchPresenter
 
     response = conn.get("/api/v2/projects?format=json&theme_exact=Water+resource+management&source=IBRD&kw=N")
 
-    JSON.parse(response.body, symbolize_names: true)[:projects].map do |key, value|
-       Project.new(value)
+    JSON.parse(response.body, symbolize_names: true)[:projects].map do |id, project_data|
+       Project.new(project_data)
     end
   end
 end
