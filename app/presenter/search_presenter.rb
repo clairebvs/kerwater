@@ -1,7 +1,6 @@
 class SearchPresenter
   def projects
-    service = WorldBankService.new
-    service.water_projects.map do |water_project|
+    service.water_projects.map do |id, water_project|
       Project.new(water_project)
     end
 
@@ -12,9 +11,15 @@ class SearchPresenter
 
     # response = conn.get("/api/v2/projects?format=json&theme_exact=Water+resource+management&source=IBRD&kw=N")
 
-    JSON.parse(response.body, symbolize_names: true)[:projects].map do |id, project_data|
-       Project.new(project_data)
-    end
-    require "pry"; binding.pry
+    # JSON.parse(response.body, symbolize_names: true)[:projects].map do |id, project_data|
+    #    Project.new(project_data)
+    # end
+    # require "pry"; binding.pry
+  end
+
+  private
+
+  def service
+    WorldBankService.new
   end
 end

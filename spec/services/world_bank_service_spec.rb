@@ -15,10 +15,10 @@ describe WorldBankService do
         expect(raw_project).to have_key :project_name
         expect(raw_project).to have_key :countryshortname
         expect(raw_project).to have_key :project_name
-        expect(raw_station).to have_key :boardapprovaldate
-        expect(raw_station).to have_key :closingdate
-        expect(raw_station).to have_key :lendprojectcost
-        expect(raw_station).to have_key :teamleadname
+        expect(raw_project).to have_key :boardapprovaldate
+        expect(raw_project).to have_key :closingdate
+        expect(raw_project).to have_key :lendprojectcost
+        expect(raw_project).to have_key :teamleadname
       end
     end
   end
