@@ -6,6 +6,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
+    # @project = Project.find(params[:id])
+    # session[:projects] = @presenter.service.water_projects
+    session[:projects][:projects.id] = @presenter.service.water_projects
+
   end
 end

@@ -13,8 +13,4 @@ class Project < ApplicationRecord
     @total_cost = data[:lendprojectcost]
     @team_leader = data[:teamleadname]
   end
-
-  def save_data_from_api(data)
-  end
-
 end
