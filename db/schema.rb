@@ -17,7 +17,10 @@ ActiveRecord::Schema.define(version: 2018_09_10_190937) do
     t.string "country"
     t.string "region"
     t.string "abstract"
-    t.string "status"
+    t.string "approval_date"
+    t.string "clsoing_date"
+    t.integer "total_cost"
+    t.string "team_leader"
   end
 
   create_table "users", force: :cascade do |t|

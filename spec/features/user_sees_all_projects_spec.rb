@@ -25,7 +25,6 @@ feature 'user logged in' do
     end
   end
   it 'can click on a project name to go to that project show page' do
-    project_1 = Project.create(name: 'Sanitation services', country: 'Peru', region: 'Latin America', asbstract: "Modernization of water")
 
     visit projects_path
 

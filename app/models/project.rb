@@ -1,8 +1,9 @@
 class Project < ApplicationRecord
 
-  attr_reader :name, :country, :region, :abstract, :approval_date, :closing_date, :total_cost, :team_leader
+  attr_reader :name, :country, :region, :abstract, :approval_date, :closing_date, :total_cost, :team_leader, :id
 
   def initialize(data)
+    @id = data[:id]
     @name = data[:project_name]
     @country = data[:countryshortname]
     @region = data[:regionname]
@@ -11,6 +12,9 @@ class Project < ApplicationRecord
     @closing_date = data[:closingdate]
     @total_cost = data[:lendprojectcost]
     @team_leader = data[:teamleadname]
+  end
+
+  def save_data_from_api(data)
   end
 
 end

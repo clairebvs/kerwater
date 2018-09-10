@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
-  get 'projects', to: 'projects#index'
+  resources :projects, only: [:index, :show]
 
   get 'dashboard', to: 'dashboard#show'
 
