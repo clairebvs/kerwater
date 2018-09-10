@@ -11,7 +11,7 @@ describe WorldBankService do
         raw_projects = subject.water_projects
         raw_project  = raw_projects.first
         expect(raw_projects.count).to eq 10
-        expect(raw_project).to have_key :regionname
+        expect(raw_project.first).to have_key :regionname
         expect(raw_project).to have_key :project_name
         expect(raw_project).to have_key :countryshortname
         expect(raw_project).to have_key :project_name
