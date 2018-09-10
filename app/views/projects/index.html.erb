@@ -16,7 +16,7 @@
 
   <tbody>
       <tr class="project">
-        <td class="name"><%= project.name %></li>
+        <td class="name"><%= link_to project.name, project_path(project) %></td>
         <td class="country"><%= project.country %></td>
         <td class="region"><%= project.region %></td>
         <td class="approval_date"><%= project.approval_date %></td>
@@ -33,9 +33,8 @@
       <thead>
         <th>Abstract</th>
       </thead>
-    <tr class="project">
+    <tr>
       <td class="abstract"><%= project.abstract %></td>
-
     </tr>
   </tbody>
   </table>

@@ -17,7 +17,7 @@ feature 'user logged in' do
       expect(page).to have_css(".name")
       expect(page).to have_css(".country")
       expect(page).to have_css(".region")
-      expect(page).to have_css(".abstract")
+      # expect(page).to have_css(".abstract")
       expect(page).to have_css(".approval_date")
       expect(page).to have_css(".closing_date")
       expect(page).to have_css(".total_cost")
