@@ -24,4 +24,12 @@ feature 'user logged in' do
       expect(page).to have_css(".team_leader")
     end
   end
+  it 'can click on a project name to go to that project show page' do
+    project_1 = Project.create(name: 'Sanitation services', country: 'Peru', region: 'Latin America', asbstract: "Modernization of water")
+
+    visit projects_path
+
+    click_link "#{project_1.name}"
+    expect(current_path).to eq(project_path(project_1))
+  end
 end
