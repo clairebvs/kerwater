@@ -1,11 +1,11 @@
-<h1> 10 Results </h1>
+<h1> 10 Results </h1><br><br>
 
-<table class="table is-bordered is-striped">
+<% @presenter.projects.each do |project| %>
+<table class="table is-bordered is-striped is-fullwidth">
   <thead>
     <th>Name</th>
     <th>Country</th>
     <th>Region</th>
-    <th>Abstract</th>
     <th>Approval date</th>
     <th>Closing date</th>
     <th>Total cost</th>
@@ -15,12 +15,10 @@
   </thead>
 
   <tbody>
-    <% @presenter.projects.each do |project| %>
       <tr class="project">
-        <td class="name"><%= project.name %></li>
+        <td class="name"><%= link_to project.name, project_path(id: project.id)%></td>
         <td class="country"><%= project.country %></td>
         <td class="region"><%= project.region %></td>
-        <td class="abstract"><%= project.abstract %></td>
         <td class="approval_date"><%= project.approval_date %></td>
         <td class="closing_date"><%= project.closing_date %></td>
         <td class="total_cost"><%= project.total_cost %></td>
@@ -28,5 +26,16 @@
         <td></td>
         <td></td>
       </tr>
-    <% end %>
   </tbody>
+</table>
+  <table class="table is-bordered is-striped is-fullwidth">
+    <tbody>
+      <thead>
+        <th>Abstract</th>
+      </thead>
+    <tr>
+      <td class="abstract"><%= project.abstract %></td>
+    </tr>
+  </tbody>
+  </table>
+<% end %>

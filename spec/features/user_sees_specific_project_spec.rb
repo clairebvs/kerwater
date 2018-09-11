@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 feature 'user logged in' do
-  scenario 'can see list of all projects related to water around the world' do
-    user = create(:user)
+  scenario 'can see a specific water project' do
+    project_data = {}
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit '/projects'
+    visit '/project'
 
-    expect(current_path).to eq(projects_path)
+    expect(current_path).to eq(project_path)
     expect(page).to have_content("10 Results")
 
     expect(page).to have_css(".project", count: 10)
@@ -23,12 +23,5 @@ feature 'user logged in' do
       expect(page).to have_css(".total_cost")
       expect(page).to have_css(".team_leader")
     end
-  end
-  it 'can click on a project name to go to that project show page' do
-
-    visit projects_path
-
-    click_link "#{project_1.name}"
-    expect(current_path).to eq(project_path(project_1))
   end
 end
