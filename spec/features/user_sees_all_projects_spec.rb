@@ -17,7 +17,6 @@ feature 'user logged in' do
       expect(page).to have_css(".name")
       expect(page).to have_css(".country")
       expect(page).to have_css(".region")
-      # expect(page).to have_css(".abstract")
       expect(page).to have_css(".approval_date")
       expect(page).to have_css(".closing_date")
       expect(page).to have_css(".total_cost")
@@ -25,10 +24,12 @@ feature 'user logged in' do
     end
   end
   it 'can click on a project name to go to that project show page' do
+    project_1 = { id: '123',
+                  name: 'abc'}
 
     visit projects_path
 
-    click_link "#{project_1.name}"
+    click_link "#{project_1[:name]}"
     expect(current_path).to eq(project_path(project_1))
   end
 end
