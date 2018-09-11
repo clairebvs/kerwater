@@ -1,5 +1,37 @@
-<%= @project.id %>
-<%= @project.name %>
-<%= @project.country %>
-<%= @project.region %>
-<%= @project.approval_date %>
+
+<table class="table is-bordered is-striped is-fullwidth">
+  <thead>
+    <th>Name</th>
+    <th>Country</th>
+    <th>Region</th>
+    <th>Approval date</th>
+    <th>Closing date</th>
+    <th>Total cost</th>
+    <th>Team Leader</th>
+    <th>Comments</th>
+    <th>Follow</th>
+  </thead>
+  <tbody>
+      <tr class="project">
+        <td class="name"><%= @project.name %></td>
+        <td class="country"><%= @project.country %></td>
+        <td class="region"><%= @project.region %></td>
+        <td class="approval_date"><%= @project.approval_date %></td>
+        <td class="closing_date"><%= @project.closing_date %></td>
+        <td class="total_cost"><%= @project.total_cost %></td>
+        <td class="team_leader"><%= @project.team_leader %></td>
+        <td></td>
+        <td></td>
+      </tr>
+  </tbody>
+</table>
+  <table class="table is-bordered is-striped is-fullwidth">
+    <tbody>
+      <thead>
+        <th>Abstract</th>
+      </thead>
+    <tr>
+      <td class="abstract"><%= @project.abstract %></td>
+    </tr>
+  </tbody>
+  </table>

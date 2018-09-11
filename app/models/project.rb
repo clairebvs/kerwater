@@ -7,7 +7,7 @@ class Project < ApplicationRecord
     @name = data[:project_name]
     @country = data[:countryshortname]
     @region = data[:regionname]
-
+    @abstract = data[:project_abstract][:cdata]
     @approval_date = data[:boardapprovaldate]
     @closing_date = data[:closingdate]
     @total_cost = data[:lendprojectcost]
