@@ -10,4 +10,9 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'dashboard#show'
 
+  namespace :api do
+    namespace :v1 do
+      get 'geolocate', to: 'geolocate#index'
+    end
+  end 
 end
