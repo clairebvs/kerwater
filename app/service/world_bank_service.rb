@@ -15,7 +15,6 @@ class WorldBankService
 
   def conn
     conn = Faraday.new(url: "https://search.worldbank.org") do |faraday|
-      faraday.headers["X-api-Key"] = ENV['DEV-KEY']
       faraday.adapter Faraday.default_adapter
     end
   end
