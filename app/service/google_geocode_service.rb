@@ -17,8 +17,6 @@ class GoogleGeocodeService
   end
 
   def lat_long
-    # @coordinates.map do |coord|
-    #   coord
   end
 
   private
