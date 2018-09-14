@@ -13,7 +13,6 @@ class GoogleGeocodeService
   end
 
   def coordinates
-
     @coordinates = JSON.parse(response.body, symbolize_names: true)[:results]
   end
 
