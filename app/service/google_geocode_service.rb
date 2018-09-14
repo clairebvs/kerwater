@@ -6,15 +6,15 @@ class GoogleGeocodeService
 
   def projects_countries
     search = SearchPresenter.new
-    projects = search.projects
-    projects.map do |project|
-    # getting an array of country 
+    search.projects.map do |project|
+    # getting an array of countries
       project.country
     end
   end
 
   def coordinates
-    JSON.parse(response.body, symbolize_names: true)
+    require "pry"; binding.pry
+    JSON.parse(response.body, symbolize_names: true)[:results]
   end
 
   private

@@ -2,11 +2,11 @@ class Api::V1::GeolocateController < ApplicationController
 
   def index
     projects = SearchPresenter.new.projects
-    country = projects[0].country
+    # country = projects[0].country
     google_service = GoogleGeocodeService.new
+    x = google_service.projects_countrie
     # pins = ProjectService.new()
-
-    render json: google_service.coordinates
+    render json: x
   end
 
 end
