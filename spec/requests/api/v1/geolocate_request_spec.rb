@@ -12,13 +12,14 @@ describe "Geolocate API" do
 
     get "/api/v1/geolocate"
 
+    require "pry"; binding.pry
     expect(response.status).to eq 200
     geolocation = JSON.parse(response.body, symbolize_names: true)
-    # require "pry"; binding.pry
-    expect(geolocation.count).to eq(2)
-    expect(geolocation[:lat]).to eq(peru[:lat])
-    expect(geolocation[:lng]).to eq(peru[:lng])
-    expect(geolocation[:lat]).to eq(cameroon[:lat])
-    expect(geolocation[:lng]).to eq(cameroon[:lng])
+
+    # expect(geolocation.count).to eq(10)
+    # expect(geolocation[:lat]).to eq(peru[:lat])
+    # expect(geolocation[:lng]).to eq(peru[:lng])
+    # expect(geolocation[:lat]).to eq(cameroon[:lat])
+    # expect(geolocation[:lng]).to eq(cameroon[:lng])
   end
 end

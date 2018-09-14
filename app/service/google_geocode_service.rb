@@ -13,8 +13,13 @@ class GoogleGeocodeService
   end
 
   def coordinates
-    require "pry"; binding.pry
-    JSON.parse(response.body, symbolize_names: true)[:results]
+
+    @coordinates = JSON.parse(response.body, symbolize_names: true)[:results]
+  end
+
+  def lat_long
+    # @coordinates.map do |coord|
+    #   coord
   end
 
   private
