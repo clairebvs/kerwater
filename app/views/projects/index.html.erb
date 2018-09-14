@@ -22,7 +22,7 @@
        zoom: 2
      });
    }
-
+  </script>
    // var marker = new google.maps.Marker({
    //    position: {lat: -34.397, lng: 150.644},
    //    map: map,
@@ -30,7 +30,10 @@
    //    icon: 'pin.png'
    //  });
 
-    fetch('http://localhost:3000/api/v1/geolocate').then((response) => response.json()).then((response) => console.log(response))
+
+<script>
+   // fetch('http://localhost:3000/api/v1/geolocate').then((response) => response.json()).then((response) => console.log(response))
+   fetch('http://localhost:3000/api/v1/geolocate').then((response) => response.json()).then((response) => function(response))
 
     for (var x in response){
       var country = response[x];
@@ -39,11 +42,14 @@
         position: location,
         map: map
       });
-      var infowindow = new.google.maps.InfoWindow({
+      var infow = new google.maps.InfoWindow({
         content: country.formatted_address
-      }); 
-      google.maps.event.addListener(marker, 'click')
-    }
+      });
+      google.maps.event.addListener(marker, 'click', function() {
+        infow.open(map, marker);
+      });
+      }
+    google.maps.event.addDomListener(window, 'load', initialize);
  </script>
 
 
