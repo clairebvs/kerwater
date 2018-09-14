@@ -22,11 +22,18 @@
        zoom: 2
      });
    }
+
+   var marker = new google.maps.Marker({
+      position: {lat: -34.397, lng: 150.644},
+      map: map,
+      title: "hello",
+      icon: 'pin.png'
+    });
  </script>
 <script>
    fetch('http://localhost:3000/api/v1/geolocate').then((response) => response.json()).then((response) => console.log(response))
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=ENV['JUST_KEY']&callback=initMap"
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
  async defer></script>
 
 
