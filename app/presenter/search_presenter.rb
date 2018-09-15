@@ -5,7 +5,18 @@ class SearchPresenter
     end
   end
 
+  def locations
+    geocode_service.coordinates.map do |coord|
+      Location.new(coord)
+    end
+  end
+
   def service
     WorldBankService.new
   end
+
+  def geocode_service
+    GoogleGeocodeService.new
+  end
+
 end
