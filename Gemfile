@@ -27,6 +27,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'activerecord-session_store'
+gem 'webmock'
+gem 'vcr'
 
 
 # Use ActiveStorage variant
