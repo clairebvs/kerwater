@@ -18,5 +18,4 @@ class SearchPresenter
   def geocode_service
     GoogleGeocodeService.new
   end
-
 end
