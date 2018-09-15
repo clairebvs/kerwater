@@ -12,7 +12,7 @@ describe 'Location' do
             }
 
     location = Location.new(data)
-    expect(location.formatted_address).to eq("Cameroon")
+    expect(location.country).to eq("Cameroon")
     expect(location.latitude).to eq(7.369721999999999)
     expect(location.longitude).to eq(12.354722)
   end
