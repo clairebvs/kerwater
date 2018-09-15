@@ -24,39 +24,38 @@
  // .then(initFetch => results = initFetch)
  // .catch(error => console.log(error));
 
- const getFetch = async () => {
-   const response = await fetch("http://localhost:3000/api/v1/geolocate");
-   const results = await response.json();
-   return results;
- }
-
+  const getFetch = async () => {
+    const response = await fetch("http://localhost:3000/api/v1/geolocate");
+    const results = await response.json();
+    return results;
+  }
 
   async function initMap() {
-      let map = new google.maps.Map(document.getElementById('map'), {
+    let map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: -9.34, lng: 150.644},
         zoom: 2
-     });
+    });
 
-     const results = await getFetch();
-     for (x in results) {
-        let country = results[x].name;
-        let location = new google.maps.LatLng(results[x].latitude, results[x].longitude);
+  const results = await getFetch();
+    for (x in results) {
+      let country = results[x].name;
+      let location = new google.maps.LatLng(results[x].latitude, results[x].longitude);
         addMarker(map, country, location);
-      };
-   };
+    };
+  };
 
-    const addMarker = (map, name, location) => {
-      let marker = new google.maps.Marker({
-        position: location,
-        map: map
-      });
-      let infowindow = new google.maps.InfoWindow({
-        content: name
-      });
-      google.maps.event.addListener(marker, 'click', function() {
-        infowindow.open(map,marker);
-      });
-    }
+  const addMarker = (map, name, location) => {
+    let marker = new google.maps.Marker({
+      position: location,
+      map: map
+    });
+    let infowindow = new google.maps.InfoWindow({
+      content: name
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map,marker);
+    });
+  }
 
  </script>
 
