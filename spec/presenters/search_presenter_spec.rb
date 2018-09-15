@@ -18,7 +18,7 @@ describe SearchPresenter do
     context '#locations' do
       it 'returns the location for all projects' do
 
-        expect(subject.locations.count).to eq 8
+        expect(subject.locations.count).to eq 7
         expect(subject.locations.first).to be_a(Location)
       end
     end
