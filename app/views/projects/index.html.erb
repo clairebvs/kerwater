@@ -1,3 +1,63 @@
+<!DOCTYPE html>
+<html>
+</head>
+<script import {JUST_KEY} from '../../config/application.yml'> </script>
+<style>
+   /* Always set the map height explicitly to define the size of the div
+    * element that contains the map. */
+   #map {
+     height: 100%;
+   }
+   /* Optional: Makes the sample page fill the window. */
+   html, body {
+     height: 100%;
+     margin: 0;
+     padding: 0;
+   }
+ </style>
+</head>
+<body>
+ <div id="map"></div>
+ <script>
+ let result = fetch("http://localhost:3000/api/v1/geolocate")
+ .then(response => response.json())
+ .then(result => result)
+ .catch(error => console.log(error))
+
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -9.34, lng: 150.644},
+        zoom: 2
+     });
+
+    for (var x in result) {
+      var country = result[x];
+      var location = new google.maps.LatLng(country.lat, country.lng);
+      addMarker(map, country.formatted_address, location);
+      }
+    }
+    debugger;
+
+    function addMarker(map, name, location) {
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+      var infowindow = new google.maps.InfoWindow({
+        content: name
+      });
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map,marker);
+      });
+    }
+
+ </script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key&callback=initMap"
+ async defer></script>
+
+
 <h1> 10 Results </h1><br><br>
 
 <% @presenter.projects.each do |project| %>
@@ -39,3 +99,4 @@
   </tbody>
   </table>
 <% end %>
+</body>
