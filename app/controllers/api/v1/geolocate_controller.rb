@@ -4,8 +4,7 @@ class Api::V1::GeolocateController < ApplicationController
     # projects = SearchPresenter.new.projects
     # country = projects[0].country
     google_service = GoogleGeocodeService.new
-    # pins = ProjectService.new()
-    require "pry"; binding.pry
+    
     render json: google_service.coordinates
   end
 
