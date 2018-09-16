@@ -2,9 +2,6 @@ class WorldBankService
 
   def water_projects
     JSON.parse(response.body, symbolize_names: true)[:projects]
-    # JSON.parse(response.body, symbolize_names: true)[:projects].map do |key, value|
-    #    value
-    # end.pop
   end
 
   private
