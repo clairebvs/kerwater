@@ -6,7 +6,6 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.new(session[:projects][params[:id].to_sym])
-    session[:projects][@project.id] = @project.id
+    @project = Project.find(params[:id])
   end
 end

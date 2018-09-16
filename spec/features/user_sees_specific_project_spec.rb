@@ -2,9 +2,7 @@ require 'rails_helper'
 
 feature 'user logged in' do
   scenario 'can see a specific water project' do
-    project_1 = { id: '123',
-                  name: 'dfg'
-                }
+    project_1 = Project.create()
 
     visit project_path(project_1)
 
@@ -24,6 +22,6 @@ feature 'user logged in' do
   end
 
   scenario 'can leave a comment' do
-    
+
   end
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Project' do
+describe 'ProjectFormatter' do
   it 'find all projects related to water' do
       data = { project_name: "Modernization of Water Supply and Sanitation Services",
                regionname: "Latin America and Caribbean",
@@ -17,7 +17,7 @@ describe 'Project' do
                 ],
               }
 
-        project = Project.new(data)
+        project = ProjectFormatter.new(data)
 
         expect(project.name).to eq("Modernization of Water Supply and Sanitation Services")
         expect(project.country).to eq("Peru")
