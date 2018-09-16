@@ -12,5 +12,30 @@ class Project
     @closing_date = data[:closingdate]
     @total_cost = data[:lendprojectcost]
     @team_leader = data[:teamleadname]
+    @lat = nil
+    @long = nil
   end
+
+  def set_lat(lat)
+    @lat = lat
+  end
+
+  def set_long(long)
+    @long = long
+  end 
+
+
+
+  # def add_locations
+  #   geo = SearchPresenter.new
+  #   @geoloc = geo.locations
+  #   @projects = geo.projects.map do |project|
+  #     @geoloc.map do |location|
+  #       # require "pry"; binding.pry
+  #       if location.name == project.country
+  #         (project.latitude = location.latitude) && (project.longitude = location.longitude)
+  #       end
+  #     end
+  #   end
+  # end
 end

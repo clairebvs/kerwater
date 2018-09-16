@@ -18,9 +18,6 @@ class GoogleGeocodeService
     @coordinates = JSON.parse(response.body, symbolize_names: true)[:results]
   end
 
-  def lat_long
-  end
-
   private
 
   def response
