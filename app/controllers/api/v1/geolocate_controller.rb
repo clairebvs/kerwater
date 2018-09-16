@@ -7,14 +7,6 @@ class Api::V1::GeolocateController < ApplicationController
     require "pry"; binding.pry
     render json: projects
     # @geoloc = geo.locations
-    # @projects = geo.projects.map do |project|
-    #   @geoloc.map do |location|
-    #     # require "pry"; binding.pry
-    #     if location.name == project.country
-    #       project + location
-    #     end
-    #   end
-    # end
     # @geolocation = geo.locations
 
     # respond_to do |format|
