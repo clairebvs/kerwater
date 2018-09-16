@@ -10,9 +10,17 @@ class ProjectFormatter
     @approval_date = data[:boardapprovaldate]
     @closing_date = data[:closingdate]
     @total_cost = data[:lendprojectcost]
-    @team_leader = data[:teamleadname]
+    @team_leader = format_team_leader(data)
     @latitude = 0
     @longitude = 0
+  end
+
+  def format_team_leader(data)
+    if data[:teamleadname].is_a?(Array)
+      data[:teamleadname].join(", ")
+    else
+      data[:teamleadname]
+    end
   end
 
   def store_projects_to_database
