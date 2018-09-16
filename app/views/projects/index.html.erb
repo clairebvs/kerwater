@@ -37,6 +37,7 @@
     });
 
   const results = await getFetch();
+  debugger;
     for (x in results) {
       let country = results[x].name;
       let location = new google.maps.LatLng(results[x].latitude, results[x].longitude);
