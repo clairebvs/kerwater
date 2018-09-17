@@ -3,6 +3,6 @@ namespace :import do
 
   task project: :environment do
     search_presenter = SearchPresenter.new
-    search_presenter.projects
+    search_presenter.saving_projects
   end
 end
