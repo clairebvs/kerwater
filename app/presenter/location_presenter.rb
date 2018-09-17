@@ -1,20 +1,12 @@
 class LocationPresenter
-  def locations
-    geocode_service.coordinates.map do |coord|
-      @projects = Project.all
+  # def array_of_locations_object
+  #   locations = geocode_service.coordinates.map do |coord|
+  #     Location.new(coord)
+  #   end
+  #   return locations
+  # end
 
-      require "pry"; binding.pry
-      Location.new(coord)
-      if coord[:formatted_address] == @projects.where(country: 'coord[:formatted_address]')
-        (@projects.update(latitude: 'coord[:geometry][:location][:lat]')) && (@projects.update(longitude: 'coord[:geometry][:location][:lng]'))
-      end
-    end
-  end
-
-  def projects_array
-  end
-
-  def geocode_service
-    GoogleGeocodeService.new
-  end
+  # def geocode_service
+  #   GoogleGeocodeService.new
+  # end
 end

@@ -26,6 +26,6 @@ describe 'ProjectFormatter' do
         expect(project.approval_date).to eq("2018-07-26T00:00:00Z")
         expect(project.closing_date).to eq("2023-12-31T00:00:00Z")
         expect(project.total_cost).to eq("200,000,000")
-        expect(project.team_leader).to eq(["Martin Benedikt Albrecht", "Gustavo Saltiel"])
+        expect(project.team_leader).to eq("Martin Benedikt Albrecht, Gustavo Saltiel")
     end
 end

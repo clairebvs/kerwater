@@ -1,15 +1,11 @@
 class GoogleGeocodeService
 
   def initialize
-    @country = projects_countries
+    @country = projects_countries.join(" ")
   end
 
   def projects_countries
-    search = SearchPresenter.new
-    search.saving_projects.map do |project|
-    # getting an array of countries
-      project.country
-    end
+    Project.all.pluck(:country)
   end
 
   def coordinates

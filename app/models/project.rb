@@ -1,11 +1,4 @@
 class Project < ApplicationRecord
-
-  # def save_data_from_api
-  #   service = WorldBankService.new
-  #   search_presenter = SearchPresenter.new
-  #   x = service.water_projects
-  #   require "pry"; binding.pry
-  #   search_presenter.projects
-  # end
+  # attr_reader :name, :country, :region, :abstract, :approval_date, :closing_date, :total_cost, :team_leader, :id, :latitude, :longitude, :locations
 
 end

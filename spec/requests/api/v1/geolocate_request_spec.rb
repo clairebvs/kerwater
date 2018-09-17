@@ -17,7 +17,7 @@ describe "Geolocate API" do
     expect(response.status).to eq 200
     geolocation = JSON.parse(response.body, symbolize_names: true)
 
-    expect(geolocation.count).to eq(7)
+    expect(geolocation.count).to eq(10)
     expect(geolocation[0][:name]).to eq('Cameroon')
     expect(geolocation[0][:latitude]).to eq(cameroon[:lat])
     expect(geolocation[1][:name]).to eq('Indonesia')
