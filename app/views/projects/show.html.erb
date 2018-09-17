@@ -20,6 +20,8 @@
         <td class="closing_date"><%= @project.closing_date %></td>
         <td class="total_cost"><%= @project.total_cost %></td>
         <td class="team_leader"><%= @project.team_leader %></td>
+        <td class="comment"><%= render partial: 'projects/comment', collection: @project.comments %></td>
+        <%= render partial: 'comments/form' %>
         <td></td>
         <td></td>
       </tr>
@@ -32,6 +34,7 @@
       </thead>
     <tr>
       <td class="abstract"><%= @project.abstract %></td>
+
     </tr>
   </tbody>
   </table>

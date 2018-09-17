@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :projects, only: [:index, :show]
+  resources :projects do
+    resources :comments
+  end
+
 
   get 'dashboard', to: 'dashboard#show'
 
@@ -14,5 +18,5 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'geolocate', to: 'geolocate#index'
     end
-  end 
+  end
 end
