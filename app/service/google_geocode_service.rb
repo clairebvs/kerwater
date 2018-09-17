@@ -5,7 +5,8 @@ class GoogleGeocodeService
   end
 
   def projects_countries
-    Project.all.pluck(:country)
+    # Project.all.pluck(:country)
+    ['Peru', 'Cameroon', 'India', 'China', 'Nepal', 'Vietnam', 'Tunisia', 'Indonesia']
   end
 
   def coordinates

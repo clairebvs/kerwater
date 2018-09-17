@@ -17,8 +17,7 @@ class SearchPresenter
   private
 
   def water_project_attrs(data)
-    {:id => data[:id],
-    :name => data[:project_name],
+    {:name => data[:project_name],
     :country => data[:countryshortname],
     :region => data[:regionname],
     :abstract => data[:project_abstract][:cdata],
