@@ -1,15 +1,25 @@
-<h3>Post a Comment</h3>
+<div class="container has-text-centered">
+  <div class="column is-4 is-offset-4">
+    <div class="box">
+      <h3>Post a Comment</h3>
+      <%= form_for [ @project, @comment ] do |f| %>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <%= f.label :author_name %><br/>
+            <%= f.text_field :author_name, class:"input", placeholder:"Text input"  %>
+          </div>
+        </div>
 
-<%= form_for [ @project, @comment ] do |f| %>
-  <p>
-    <%= f.label :author_name %><br/>
-    <%= f.text_field :author_name %>
-  </p>
-  <p>
-    <%= f.label :body %><br/>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit 'Submit' %>
-  </p>
-<% end %>
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <%= f.label :body %><br/>
+            <%= f.text_area :body, class:"textarea", placeholder:"Textarea"%>
+          </div>
+        </div>
+        <%= f.submit 'Submit', class: "button is-block is-info is-small is-fullwidth" %>
+      <% end %>
+    </div>
+  </div>
+</div>
