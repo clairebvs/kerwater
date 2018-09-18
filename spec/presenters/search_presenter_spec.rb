@@ -29,9 +29,11 @@ describe SearchPresenter do
       end
     end
 
-    context '#countrie' do
+    context '#countries' do
       it 'returns an array of countries where a project is happening' do
-        expect(subject.countries.count).to eq(8)
+        expect(subject.countries.count).to eq(10)
+        expect(subject.countries[0]).to eq('Peru')
+        expect(subject.countries[1]).to eq('Cameroon')
       end
     end
   end
