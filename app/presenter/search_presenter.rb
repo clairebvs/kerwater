@@ -43,7 +43,7 @@ class SearchPresenter
       data[:teamleadname]
     end
   end
-  
+
   def geocode_service
     @geocode_service ||= GoogleGeocodeService.new(countries)
   end

@@ -36,5 +36,12 @@ describe SearchPresenter do
         expect(subject.countries[1]).to eq('Cameroon')
       end
     end
+
+    context '#format_team_leader' do
+      it 'returns a string of the leadername instead of array' do
+        data = subject.raw_projects[:P157043]
+        expect(subject.send(:format_team_leader, data)).to eq("Martin Benedikt Albrecht, Gustavo Saltiel")
+      end
+    end
   end
 end
