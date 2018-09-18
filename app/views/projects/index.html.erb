@@ -19,13 +19,9 @@
 <body>
  <div id="map"></div>
  <script>
- // fetch("http://localhost:3000/api/v1/geolocate")
- // .then(response => response.json())
- // .then(initFetch => results = initFetch)
- // .catch(error => console.log(error));
 
   const getFetch = async () => {
-    const response = await fetch("http://localhost:3000/api/v1/geolocate");
+    const response = await fetch("/api/v1/geolocate");
     const results = await response.json();
     return results;
   }
@@ -67,6 +63,7 @@
 <h1> 10 Results </h1><br><br>
 
 <% @projects.each do |project| %>
+<div class="project">
 <table class="table is-bordered is-striped is-fullwidth">
   <thead>
     <th>Name</th>
@@ -104,5 +101,6 @@
     </tr>
   </tbody>
   </table>
+</div>
 <% end %>
 </body>

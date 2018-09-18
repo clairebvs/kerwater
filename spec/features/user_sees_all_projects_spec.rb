@@ -11,7 +11,7 @@ feature 'user logged in' do
     expect(current_path).to eq(projects_path)
     expect(page).to have_content("10 Results")
 
-    expect(page).to have_css(".project", count: 10)
+    expect(page).to have_css(".project")
 
     within(first(".project")) do
       expect(page).to have_css(".name")
@@ -25,11 +25,11 @@ feature 'user logged in' do
   end
   it 'can click on a project name to go to that project show page' do
     project_1 = { id: '123',
-                  name: 'abc'}
+                  name: 'Modernization of Water Supply and Sanitation Services'}
 
     visit projects_path
 
-    click_link "#{project_1[:name]}"
+    find("name").click_link "#{project_1[:name]}"
     expect(current_path).to eq(project_path(project_1))
   end
 end
