@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 describe GoogleGeocodeService do
-  subject { GoogleGeocodeService.new }
+  countries = ['Peru', 'Cameroon', 'India', 'China', 'Nepal', 'Vietnam', 'Tunisia', 'Indonesia']
+  subject { GoogleGeocodeService.new(countries) }
   it 'exists' do
     expect(subject).to be_a GoogleGeocodeService
   end
