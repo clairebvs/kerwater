@@ -8,18 +8,11 @@ describe SearchPresenter do
   end
 
   context 'instance methods' do
-    context '#projects' do
+    context '#saving_projects' do
       it 'returns all projects with a link to water' do
 
-        expect(subject.projects.count).to eq(10)
-        expect(subject.projects.first).to be_a(Project)
-      end
-    end
-    context '#locations' do
-      it 'returns the location for all projects' do
-
-        expect(subject.locations.count).to eq 7
-        expect(subject.locations.first).to be_a(Location)
+        expect(subject.saving_projects.count).to eq(10)
+        expect(subject.saving_projects.first).to be_a(Project)
       end
     end
   end

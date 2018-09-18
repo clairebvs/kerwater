@@ -8,7 +8,6 @@
     <th>Closing date</th>
     <th>Total cost</th>
     <th>Team Leader</th>
-    <th>Comments</th>
     <th>Follow</th>
   </thead>
   <tbody>
@@ -21,7 +20,6 @@
         <td class="total_cost"><%= @project.total_cost %></td>
         <td class="team_leader"><%= @project.team_leader %></td>
         <td></td>
-        <td></td>
       </tr>
   </tbody>
 </table>
@@ -32,6 +30,12 @@
       </thead>
     <tr>
       <td class="abstract"><%= @project.abstract %></td>
+
     </tr>
   </tbody>
   </table>
+
+<div class='comment'>
+  <%= render partial: 'projects/comment', collection: @project.comments %></td>
+  <%= render partial: 'comments/form' %>
+</div>

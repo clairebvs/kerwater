@@ -1,16 +1,5 @@
-class Project
+class Project < ApplicationRecord
+  # attr_reader :name, :country, :region, :abstract, :approval_date, :closing_date, :total_cost, :team_leader, :id, :latitude, :longitude, :locations
+  has_many :comments
 
-  attr_reader :name, :country, :region, :abstract, :approval_date, :closing_date, :total_cost, :team_leader, :id
-
-  def initialize(data)
-    @id = data[:id]
-    @name = data[:project_name]
-    @country = data[:countryshortname]
-    @region = data[:regionname]
-
-    @approval_date = data[:boardapprovaldate]
-    @closing_date = data[:closingdate]
-    @total_cost = data[:lendprojectcost]
-    @team_leader = data[:teamleadname]
-  end
 end

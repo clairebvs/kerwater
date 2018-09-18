@@ -1,22 +1,10 @@
 class GoogleGeocodeService
-
-  def initialize
-    @country = projects_countries
-  end
-
-  def projects_countries
-    search = SearchPresenter.new
-    search.projects.map do |project|
-    # getting an array of countries
-      project.country
-    end
+  def initialize(countries)
+    @country = countries
   end
 
   def coordinates
     @coordinates = JSON.parse(response.body, symbolize_names: true)[:results]
-  end
-
-  def lat_long
   end
 
   private
