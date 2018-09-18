@@ -18,8 +18,9 @@ feature 'user logged in' do
       expect(page).to have_css(".closing_date")
       expect(page).to have_css(".total_cost")
       expect(page).to have_css(".team_leader")
-      expect(page).to have_css(".comment")
     end
+
+    expect(page).to have_css(".comment")
   end
 
   describe "they fill in a comment form" do

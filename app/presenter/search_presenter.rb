@@ -1,17 +1,23 @@
 class SearchPresenter
 
-  def initialize
-    @locations = get_locations
-  end
-
   def saving_projects
-    service.water_projects.map do |id, water_project|
+    raw_projects.map do |id, water_project|
       Project.create(water_project_attrs(water_project))
     end
   end
 
   def service
     WorldBankService.new
+  end
+
+  def raw_projects
+    @raw_projects ||= service.water_projects
+  end
+
+  def countries
+    raw_projects.map do |id, water_project|
+      water_project[:countryshortname]
+    end
   end
 
   private
@@ -37,17 +43,19 @@ class SearchPresenter
       data[:teamleadname]
     end
   end
+  
+  def geocode_service
+    @geocode_service ||= GoogleGeocodeService.new(countries)
+  end
 
-  def get_locations
-    geocode_service = GoogleGeocodeService.new
-    locations = geocode_service.coordinates.map do |coord|
+  def locations
+    @locations ||= geocode_service.coordinates.map do |coord|
       Location.new(coord)
     end
-    return locations
   end
 
   def get_lat(country_data)
-    location_object = @locations.find do |location|
+    location_object = locations.find do |location|
       location.name == country_data
     end
     if location_object == nil
@@ -58,7 +66,7 @@ class SearchPresenter
   end
 
   def get_long(country_data)
-    location_object = @locations.find do |location|
+    location_object = locations.find do |location|
       location.name == country_data
     end
     if location_object == nil

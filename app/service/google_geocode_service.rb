@@ -1,12 +1,6 @@
 class GoogleGeocodeService
-
-  def initialize
-    @country = projects_countries.join(" ")
-  end
-
-  def projects_countries
-    # Project.all.pluck(:country)
-    ['Peru', 'Cameroon', 'India', 'China', 'Nepal', 'Vietnam', 'Tunisia', 'Indonesia']
+  def initialize(countries)
+    @country = countries
   end
 
   def coordinates
