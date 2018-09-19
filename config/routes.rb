@@ -19,4 +19,6 @@ Rails.application.routes.draw do
       get 'geolocate', to: 'geolocate#index'
     end
   end
+
+  get '/sms', to: 'sms#show'
 end

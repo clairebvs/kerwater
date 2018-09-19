@@ -39,3 +39,12 @@
   <%= render partial: 'projects/comment', collection: @project.comments %></td>
   <%= render partial: 'comments/form' %>
 </div>
+
+<div class='form_sms'>
+  <%= form_tag '/sms', method: 'get' do %>
+    <%= label_tag :phone_number %>
+    <%= text_field_tag :phone_number %>
+    <%= submit_tag 'Send Text' %>
+  <% end %>
+
+</div>
