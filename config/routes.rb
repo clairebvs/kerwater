@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'twilio/sms'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "home#index"
 
@@ -21,4 +22,5 @@ Rails.application.routes.draw do
   end
 
   get '/sms', to: 'sms#show'
+  post '/twilio/sms', to: 'twilio/sms#create'
 end
