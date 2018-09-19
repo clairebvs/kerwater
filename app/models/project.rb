@@ -1,14 +1,28 @@
 class Project < ApplicationRecord
-  # attr_reader :name, :country, :region, :abstract, :approval_date, :closing_date, :total_cost, :team_leader, :id, :latitude, :longitude, :locations
   has_many :comments
 
-  def update_project_data
-    search_presenter = SearchPresenter.new
-    projects = search_presenter.raw_projects
-    # if projects !=
-    #
-    # # else
-    #
-    # end
+  def self.update_api_data
+    wbs = WorldBankService.new
+    api_data_objects = wbs.water_projects
+    database_project_objects = Project.all
+    Project.check_project_name(api_data_objects, database_project_objects)
+    Project.check_country_name(api_data_objects, database_project_objects)
   end
+
+  def self.check_project_name(api_data_objects, database_project_objects)
+    api_data_objects.map do |key, value|
+      if value[:project_name] != database_project_objects
+        Project.update(name: value[:project_name])
+      end
+    end
+  end
+
+  def self.check_country_name(api_data_objects, database_project_objects)
+    api_data_objects.map do |key, value|
+      if value[:countryshortname] != database_project_objects
+        Project.update(country: value[:countryshortname])
+      end
+    end
+  end
+
 end

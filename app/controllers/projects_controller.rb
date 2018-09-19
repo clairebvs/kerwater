@@ -11,4 +11,5 @@ class ProjectsController < ApplicationController
     @comment = Comment.new
     @comment.project_id = @project.id
   end
+
 end

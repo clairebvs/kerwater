@@ -1,7 +1,7 @@
 class CheckUpdateApiJob < ApplicationJob
-  queue_as :default
+  queue_as :urgent
 
-  def perform(*args)
-    # Do something later
+  def self.perform
+    Project.update_api_data
   end
 end
