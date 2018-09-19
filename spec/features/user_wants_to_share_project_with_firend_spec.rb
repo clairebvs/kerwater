@@ -14,7 +14,8 @@ feature 'a logged in user' do
     click_on 'Send Text'
     # And click a “Send Text” Button
     # The phone number will be texted the project name and a link to that projects show page.
-    expect(current_path).to eq(project_sms_path)
+    expect(current_path).to eq(sms_path)
+    # require "pry"; binding.pry
     expect(page).to have_css(".sms")
     expect(page).to have_content("SMS successfully sent")
   end

@@ -21,5 +21,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/sms', to: 'sms#show'
+  get '/project/sms', to: 'project/sms#show'
   post '/project/sms', to: 'project/sms#create'
 end

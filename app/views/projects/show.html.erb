@@ -42,6 +42,7 @@
 
 <div class='form_sms'>
   <%= form_tag '/project/sms', method: 'post' do %>
+    <%= hidden_field_tag :id, @project.id %>
     <%= label_tag :phone_number %>
     <%= text_field_tag :phone_number %>
     <%= submit_tag 'Send Text' %>
