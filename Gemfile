@@ -54,6 +54,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'simplecov'
   gem 'shoulda-matchers'
+  gem 'twilio-ruby', '~> 5.12.4'
 end
 
 group :development do
