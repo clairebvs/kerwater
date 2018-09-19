@@ -34,6 +34,12 @@ class Project < ApplicationRecord
     end
   end
 
-  
+  def self.check_abstract(api_data, database_data)
+    api_data.map do |key, value|
+      if value[:project_abstract][:cdata] != database_data
+        Project.update(abstract: value[:project_abstract][:cdata])
+      end
+    end
+  end
 
 end
