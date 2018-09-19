@@ -1,7 +1,26 @@
 .logo {
-  font-style: bold;
-  display: flex;
-  align-items: center;
+    background-image: url(<%= asset_path("kerwater.png")%>);
+
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    font-style: bold;
+    display: flex;
+    align-items: center;
+}
+
+.main-image {
+  background-image: url(<%= asset_path("kerwater_body.jpg")%>);
+
+   height: 100%;
+
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
 }
 
 .country {
