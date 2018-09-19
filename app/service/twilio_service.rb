@@ -5,7 +5,7 @@ class TwilioService
     message = @client.messages.create(
       from: '+18562494315',
       to: phone,
-      body: "#{project.name}"
+      body: "#{project.name} http://localhost:3000/projects/project"
     )
   end
 end

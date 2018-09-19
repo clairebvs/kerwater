@@ -8,7 +8,4 @@ class Project::SmsController < ApplicationController
 
     redirect_to project_path(@project)
   end
-
-  def show
-  end
 end
