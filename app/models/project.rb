@@ -58,4 +58,12 @@ class Project < ApplicationRecord
     end
   end
 
+  def self.check_total_cost(api_data, database_data)
+    api_data.map do |key, value|
+      if value[:lendprojectcost] != database_data
+        Project.update(total_cost: value[:lendprojectcost])
+      end
+    end
+  end
+
 end
