@@ -7,7 +7,6 @@ namespace :import do
   end
 
   task data_update: :environment do
-    # Project.update_api_data
     CheckUpdateApiJob.perform
   end
 end
