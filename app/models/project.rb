@@ -8,6 +8,10 @@ class Project < ApplicationRecord
     Project.check_project_name(api_data_objects, database_project_objects)
     Project.check_country_name(api_data_objects, database_project_objects)
     Project.check_region(api_data_objects, database_project_objects)
+    Project.check_abstract(api_data_objects, database_project_objects)
+    Project.check_approval_date(api_data_objects, database_project_objects)
+    Project.check_closing_date(api_data_objects, database_project_objects)
+    Project.check_total_cost(api_data_objects, database_project_objects)
   end
 
   def self.check_project_name(api_data, database_data)
