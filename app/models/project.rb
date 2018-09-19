@@ -12,6 +12,7 @@ class Project < ApplicationRecord
     Project.check_approval_date(api_data_objects, database_project_objects)
     Project.check_closing_date(api_data_objects, database_project_objects)
     Project.check_total_cost(api_data_objects, database_project_objects)
+    Project.check_team_leader(api_data_objects, database_project_objects)
   end
 
   def self.check_project_name(api_data, database_data)
@@ -66,6 +67,17 @@ class Project < ApplicationRecord
     api_data.map do |key, value|
       if value[:lendprojectcost] != database_data
         Project.update(total_cost: value[:lendprojectcost])
+      end
+    end
+  end
+
+  def self.check_team_leader(api_data, database_data)
+    api_data.map do |key, value|
+      if value[:teamleadname].is_a?(Array)
+        team_lead_string = value[:teamleadname].join(", ")
+        if team_lead_string != database_data
+          Project.update(team_leader: team_lead_string)
+        end
       end
     end
   end
