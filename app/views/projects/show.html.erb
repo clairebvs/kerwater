@@ -41,7 +41,7 @@
 </div>
 
 <div class='form_sms'>
-  <%= form_tag '/sms', method: 'get' do %>
+  <%= form_tag '/project/sms', method: 'post' do %>
     <%= label_tag :phone_number %>
     <%= text_field_tag :phone_number %>
     <%= submit_tag 'Send Text' %>

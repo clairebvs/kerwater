@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'twilio-ruby'
 
 describe 'a user can send a sms to a friend' do
-  context 'using twilio api/service' do
+  it 'using twilio api/service' do
     project_1 = create(:project, name: 'Modernization of irrigation')
 
     @client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
@@ -12,8 +12,6 @@ describe 'a user can send a sms to a friend' do
       body: "#{project_1.name}"
     )
 
-    post ''
-
-    # puts message.sid
+    puts message.sid
   end
 end

@@ -21,6 +21,5 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/sms', to: 'sms#show'
-  post '/twilio/sms', to: 'twilio/sms#create'
+  post '/project/sms', to: 'project/sms#create'
 end
