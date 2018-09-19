@@ -50,4 +50,12 @@ class Project < ApplicationRecord
     end
   end
 
+  def self.check_closing_date(api_data, database_data)
+    api_data.map do |key, value|
+      if value[:closingdate] != database_data
+        Project.update(closing_date: value[:closingdate])
+      end
+    end
+  end
+
 end
